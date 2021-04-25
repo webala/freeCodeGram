@@ -4,7 +4,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
-
+use App\Http\Controllers\PostsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +30,6 @@ Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/create_post', [PostsController::class, 'index'])->name('post.create');
+Route::post('/create_post', [PostsController::class, 'store']);
